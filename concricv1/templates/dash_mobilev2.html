@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+  {%load static%}
+  <head>
+    <title>concric</title>
+    <meta charset="utf-8" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1,user-scalable=no"
+    />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'dash_mobile.css'%}"
+    />
+
+    <script
+      type="text/javascript"
+      src="{% static 'dash_mobile_nonloggedin.js'%}"
+    ></script>
+    <script type="text/javascript" src="{% static 'universal.js'%}"></script>
+    <script type="text/javascript" src="{% static 'jsonhandler.js'%}"></script>
+  </head>
+
+  <body
+    onload="heightadjust() ,closeonstart(),hashtabchange(),hashhandler3()"
+    onresize="re()"
+    onoffline="openerrbox('offline')"
+    onhashchange="hashtabchange(),hashhandler3()"
+    onpopstate="hashhandler4()"
+  >
+    <script>
+      //orientation change algo
+      $(window).on("orientationchange", function () {
+        checkport(window.orientation);
+      });
+      function getcsrf() {
+        return "{{csrf_token }}";
+      }
+    </script>
+    <div class="onstarttab" id="onstarttab">
+      <div class="logo">CONCRIC</div>
+    </div>
+    <div class="porterr" id="porterr" style="display: none">
+      <div class="head">CONCRIC</div>
+      <div class="bdy">
+        <svg class="svg-icon" viewBox="0 0 20 20">
+          <path
+            d="M13.372,1.781H6.628c-0.696,0-1.265,0.569-1.265,1.265v13.91c0,0.695,0.569,1.265,1.265,1.265h6.744c0.695,0,1.265-0.569,1.265-1.265V3.045C14.637,2.35,14.067,1.781,13.372,1.781 M13.794,16.955c0,0.228-0.194,0.421-0.422,0.421H6.628c-0.228,0-0.421-0.193-0.421-0.421v-0.843h7.587V16.955z M13.794,15.269H6.207V4.731h7.587V15.269z M13.794,3.888H6.207V3.045c0-0.228,0.194-0.421,0.421-0.421h6.744c0.228,0,0.422,0.194,0.422,0.421V3.888z"
+          ></path>
+        </svg>
+        <p>CONCRIC is only available in portrait mode</p>
+      </div>
+    </div>
+    <div class="origbody">
+      <div class="dash_head" id="dash_head">
+        <div class="logo" id="logo">CONCRIC</div>
+        <div class="tabname" id="tabname"></div>
+        <div class="space"></div>
+        <div class="icons">
+          <button onclick="openupop(this)" data-type="Search" data-tabno="0">
+            <!--b1-->
+            <svg class="svg-icon" viewBox="0 0 20 20">
+              <path
+                d="M18.109,17.776l-3.082-3.081c-0.059-0.059-0.135-0.077-0.211-0.087c1.373-1.38,2.221-3.28,2.221-5.379c0-4.212-3.414-7.626-7.625-7.626c-4.212,0-7.626,3.414-7.626,7.626s3.414,7.627,7.626,7.627c1.918,0,3.665-0.713,5.004-1.882c0.006,0.085,0.033,0.17,0.098,0.234l3.082,3.081c0.143,0.142,0.371,0.142,0.514,0C18.25,18.148,18.25,17.918,18.109,17.776zM9.412,16.13c-3.811,0-6.9-3.089-6.9-6.9c0-3.81,3.089-6.899,6.9-6.899c3.811,0,6.901,3.09,6.901,6.899C16.312,13.041,13.223,16.13,9.412,16.13z"
+              ></path>
+            </svg>
+          </button>
+          <button onclick="openupop(this)" data-type="Architect" data-tabno="1">
+            <!--b2-->
+            <svg class="svg-icon" viewBox="0 0 20 20">
+              <path
+                d="M14.584,1.617l-4.625,2.89L5.333,2.195L0.709,4.495v13.888l4.625-2.313l4.625,1.157l4.625-1.734l4.625,1.734
+                V3.93L14.584,1.617z M18.053,15.492l-3.469-1.157l-4.625,1.734l-4.625-1.155l-3.468,1.734V5.086l3.468-1.734l4.625,2.312
+                l4.625-2.891l3.469,1.734V15.492z M10.248,6.827c-0.16,0-0.29,0.163-0.29,0.363v6.781c0,0.201,0.129,0.363,0.29,0.363
+                c0.16,0,0.289-0.162,0.289-0.363V7.19C10.537,6.99,10.408,6.827,10.248,6.827z M5.623,5.093c-0.16,0-0.29,0.163-0.29,0.363v7.938
+                c0,0.201,0.129,0.363,0.29,0.363c0.16,0,0.289-0.162,0.289-0.363V5.456C5.912,5.256,5.783,5.093,5.623,5.093z M14.584,12.815
+                c0,0.2,0.129,0.363,0.289,0.363s0.289-0.163,0.289-0.363V4.878c0-0.2-0.129-0.364-0.289-0.364s-0.289,0.164-0.289,0.364V12.815z"
+              ></path>
+            </svg>
+          </button>
+          <button
+            onclick="openupop(this)"
+            data-type="Liked items"
+            data-tabno="2"
+          >
+            <!--b3-->
+            <svg class="svg-icon" viewBox="0 0 20 20">
+              <path
+                d="M13.22,2.984c-1.125,0-2.504,0.377-3.53,1.182C8.756,3.441,7.502,2.984,6.28,2.984c-2.6,0-4.714,2.116-4.714,4.716c0,0.32,0.032,0.644,0.098,0.96c0.799,4.202,6.781,7.792,7.46,8.188c0.193,0.111,0.41,0.168,0.627,0.168c0.187,0,0.376-0.041,0.55-0.127c0.011-0.006,1.349-0.689,2.91-1.865c0.021-0.016,0.043-0.031,0.061-0.043c0.021-0.016,0.045-0.033,0.064-0.053c3.012-2.309,4.6-4.805,4.6-7.229C17.935,5.1,15.819,2.984,13.22,2.984z M12.544,13.966c-0.004,0.004-0.018,0.014-0.021,0.018s-0.018,0.012-0.023,0.016c-1.423,1.076-2.674,1.734-2.749,1.771c0,0-6.146-3.576-6.866-7.363C2.837,8.178,2.811,7.942,2.811,7.7c0-1.917,1.554-3.47,3.469-3.47c1.302,0,2.836,0.736,3.431,1.794c0.577-1.121,2.161-1.794,3.509-1.794c1.914,0,3.469,1.553,3.469,3.47C16.688,10.249,14.474,12.495,12.544,13.966z"
+              ></path>
+            </svg>
+          </button>
+          <button onclick="openupop(this)" data-type="Cart" data-tabno="3">
+            <!--b4-->
+            <svg class="svg-icon" viewBox="0 0 20 20">
+              <path
+                d="M17.696,9.368H2.305c-0.189,0-0.367,0.092-0.478,0.245c-0.11,0.155-0.141,0.352-0.08,0.532l2.334,6.918c0.081,0.238,0.305,0.4,0.556,0.4h10.735c0.253,0,0.478-0.162,0.557-0.402l2.323-6.917c0.062-0.179,0.03-0.376-0.079-0.531C18.062,9.459,17.886,9.368,17.696,9.368z M14.95,16.287H5.062l-1.938-5.743h13.753L14.95,16.287z"
+              ></path>
+              <path
+                d="M6.345,7.369c0.325,0,0.588-0.263,0.588-0.588c0-1.691,1.376-3.067,3.067-3.067c1.691,0,3.067,1.376,3.067,3.067c0,0.325,0.264,0.588,0.588,0.588c0.326,0,0.589-0.263,0.589-0.588c0-2.34-1.904-4.243-4.244-4.243c-2.34,0-4.244,1.903-4.244,4.243C5.757,7.106,6.02,7.369,6.345,7.369z"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="dash_mobile_body" id="exploretab">
+        <!--explore tab-->
+      </div>
+      <!--quotationtab-->
+      <div class="dash_mobile_body" id="quotationtab">
+        <div class="dash_mobile_quotation"></div>
+      </div>
+      <!--shoptab-->
+      <div class="dash_mobile_body" id="shoptab">
+        <div class="dash_mobile_shop" id="shop_body">
+          <div class="head">
+            <div
+              class="cat catactive"
+              onclick="shopcatchange(this) "
+              data-cat="0"
+            >
+              CATEGORIES
+            </div>
+            <div
+              class="cat catinactive"
+              onclick="shopcatchange(this)"
+              data-cat="1"
+            >
+              BRANDS
+            </div>
+            <div
+              class="baseline"
+              id="baseline"
+              style="transition: 0.2s; left: 0%"
+            ></div>
+          </div>
+          <div class="bdy" id="categories">
+            <div class="card"></div>
+            <div class="card"></div>
+          </div>
+          <div class="bdy" id="brands">
+            <div class="brand_card"></div>
+            <div class="brand_card"></div>
+            <div class="brand_card"></div>
+            <div class="brand_card"></div>
+            <div class="brand_card"></div>
+            <div class="brand_card"></div>
+            <div class="brand_card"></div>
+            <div class="brand_card"></div>
+            <div class="brand_card"></div>
+            <div class="brand_card"></div>
+            <div class="brand_card"></div>
+          </div>
+        </div>
+      </div>
+      <!--sod tab-->
+      <div class="dash_mobile_body" id="sodtab">
+        <div class="dash_mobile_sod">
+          <div class="head">Every service you need</div>
+          <div class="sod_bdy">
+            <div class="sod_card"></div>
+            <div class="sod_card"></div>
+            <div class="sod_card"></div>
+            <div class="sod_card"></div>
+            <div class="sod_card"></div>
+            <div class="sod_card"></div>
+          </div>
+        </div>
+      </div>
+      <!--profiletab-->
+      <div class="dash_mobile_body" id="profiletab">
+        <div class="dash_mobile_profile" id="register" style="display: none">
+          <div class="regestraiton_login_bdy" id="register2">
+            <!--regestration tab-->
+            <div class="cont"><h1>REGISTER</h1></div>
+            <div class="cont">
+              <label for="myaccountphoneno"
+                ><div class="lbl" id="lblphoneno">Phone No.*</div></label
+              >
+              <input
+                type="number"
+                id="myaccountphoneno"
+                required="required"
+                placeholder="Mobile no."
+                autocomplete="off"
+              />
+              <div class="sbaseline" id="sbaseline"></div>
+            </div>
+            <div class="cont" id="otpinputcontainer" style="height: 0px">
+              <label for="otp"
+                ><div class="lbl" id="lblotp">
+                  Enter OTP recieved on&nbsp;
+                  <p id="respondedphoneno"></p></div
+              ></label>
+              <input
+                type="number"
+                id="otp"
+                placeholder="OTP"
+                autocomplete="off"
+              />
+              <div class="sbaseline" id="sbaselineotp"></div>
+            </div>
+            <div class="cont" id="mobilenosubmit">
+              <input type="submit" id="mobilenosubmitbutton" />
+            </div>
+            <div class="cont" style="height: 0px" id="verifyotp">
+              <input type="submit" value="verify" id="verifyotpbutton" />
+            </div>
+            <div class="cont">
+              <p onclick="openlogin()">Already have a account,</p>
+              <p style="color: #4691f6" onclick="openlogin()">Login</p>
+            </div>
+          </div>
+        </div>
+        <div class="dash_mobile_profile" id="login" style="display: block">
+          <div class="regestraiton_login_bdy">
+            <!--login tab-->
+            <div class="cont"><h1>LOGIN</h1></div>
+            <div class="cont">
+              <label for="myaccountphonenologin"
+                ><div class="lbl" id="lblloginphoneno">Phone No.</div></label
+              >
+              <input
+                type="number"
+                id="myaccountphonenologin"
+                required="required"
+                placeholder="Mobile no."
+                autocomplete="off"
+              />
+              <div class="sbaseline" id="sbaselineloginphoneno"></div>
+            </div>
+            <div class="cont">
+              <label for="myaccountpasswordlogin"
+                ><div class="lbl" id="lblloginpassword">Password</div></label
+              >
+              <input
+                type="password"
+                id="myaccountpasswordlogin"
+                required="required"
+                placeholder="Password"
+                autocomplete="off"
+              />
+              <div class="sbaseline" id="sbaselineloginpassword"></div>
+            </div>
+            <div class="cont" id="mobilenosubmitlogin">
+              <input
+                type="submit"
+                value="login"
+                id="mobilenosubmitbuttonlogin"
+              />
+            </div>
+
+            <div class="cont">
+              <p onclick="openregister()">New User,</p>
+              <p style="color: #4691f6" onclick="openregister()">Register</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--footer-->
+      <div class="dash_foot" id="dash_footer">
+        <div class="icons" id="ftr_icons">
+          <button class="active" data-mtab="0" onclick="mtabchange(this)">
+            <!--exploare button-->
+            <svg viewBox="0 0 80 80" width="50%" id="quotation">
+              <circle
+                stroke-width="4px"
+                fill="none"
+                cx="40"
+                cy="40"
+                r="30"
+              ></circle>
+              <circle
+                stroke-width="4px"
+                stroke="white"
+                cx="69"
+                cy="40"
+                r="8"
+              ></circle>
+              <circle
+                fill="none"
+                cx="40"
+                cy="40"
+                r="16"
+                stroke-width="4px"
+              ></circle>
+            </svg>
+            <p>Explore</p>
+          </button>
+          <button
+            class="inactive"
+            data-mtab="1"
+            onclick="mtabchange(this)"
+            data-mtabdescription="Quotation"
+          >
+            <!--quotation button-->
+            <svg id="quotation" viewBox="0 0 20 20">
+              <path
+                d="M18.303,4.742l-1.454-1.455c-0.171-0.171-0.475-0.171-0.646,0l-3.061,3.064H2.019c-0.251,0-0.457,0.205-0.457,0.456v9.578c0,0.251,0.206,0.456,0.457,0.456h13.683c0.252,0,0.457-0.205,0.457-0.456V7.533l2.144-2.146C18.481,5.208,18.483,4.917,18.303,4.742 M15.258,15.929H2.476V7.263h9.754L9.695,9.792c-0.057,0.057-0.101,0.13-0.119,0.212L9.18,11.36h-3.98c-0.251,0-0.457,0.205-0.457,0.456c0,0.253,0.205,0.456,0.457,0.456h4.336c0.023,0,0.899,0.02,1.498-0.127c0.312-0.077,0.55-0.137,0.55-0.137c0.08-0.018,0.155-0.059,0.212-0.118l3.463-3.443V15.929z M11.241,11.156l-1.078,0.267l0.267-1.076l6.097-6.091l0.808,0.808L11.241,11.156z"
+              ></path>
+            </svg>
+            <p>quotation</p>
+          </button>
+          <button
+            class="inactive"
+            data-mtab="2"
+            onclick="mtabchange(this)"
+            data-mtabdescription="Shop"
+          >
+            <!--shop button-->
+            <svg id="quotation" viewBox="0 0 20 20">
+              <path
+                d="M17.72,5.011H8.026c-0.271,0-0.49,0.219-0.49,0.489c0,0.271,0.219,0.489,0.49,0.489h8.962l-1.979,4.773H6.763L4.935,5.343C4.926,5.316,4.897,5.309,4.884,5.286c-0.011-0.024,0-0.051-0.017-0.074C4.833,5.166,4.025,4.081,2.33,3.908C2.068,3.883,1.822,4.075,1.795,4.344C1.767,4.612,1.962,4.853,2.231,4.88c1.143,0.118,1.703,0.738,1.808,0.866l1.91,5.661c0.066,0.199,0.252,0.333,0.463,0.333h8.924c0.116,0,0.22-0.053,0.308-0.128c0.027-0.023,0.042-0.048,0.063-0.076c0.026-0.034,0.063-0.058,0.08-0.099l2.384-5.75c0.062-0.151,0.046-0.323-0.045-0.458C18.036,5.092,17.883,5.011,17.72,5.011z"
+              ></path>
+              <path
+                d="M8.251,12.386c-1.023,0-1.856,0.834-1.856,1.856s0.833,1.853,1.856,1.853c1.021,0,1.853-0.83,1.853-1.853S9.273,12.386,8.251,12.386z M8.251,15.116c-0.484,0-0.877-0.393-0.877-0.874c0-0.484,0.394-0.878,0.877-0.878c0.482,0,0.875,0.394,0.875,0.878C9.126,14.724,8.733,15.116,8.251,15.116z"
+              ></path>
+              <path
+                d="M13.972,12.386c-1.022,0-1.855,0.834-1.855,1.856s0.833,1.853,1.855,1.853s1.854-0.83,1.854-1.853S14.994,12.386,13.972,12.386z M13.972,15.116c-0.484,0-0.878-0.393-0.878-0.874c0-0.484,0.394-0.878,0.878-0.878c0.482,0,0.875,0.394,0.875,0.878C14.847,14.724,14.454,15.116,13.972,15.116z"
+              ></path>
+            </svg>
+            <p>shop</p></button
+          ><button
+            class="inactive"
+            data-mtab="3"
+            onclick="mtabchange(this)"
+            id="sod"
+            data-mtabdescription="Sod"
+          >
+            <!--sod button-->
+            <svg id="quotation" viewBox="0 0 20 20">
+              <path
+                d="M12.443,9.672c0.203-0.496,0.329-1.052,0.329-1.652c0-1.969-1.241-3.565-2.772-3.565S7.228,6.051,7.228,8.02c0,0.599,0.126,1.156,0.33,1.652c-1.379,0.555-2.31,1.553-2.31,2.704c0,1.75,2.128,3.169,4.753,3.169c2.624,0,4.753-1.419,4.753-3.169C14.753,11.225,13.821,10.227,12.443,9.672z M10,5.247c1.094,0,1.98,1.242,1.98,2.773c0,1.531-0.887,2.772-1.98,2.772S8.02,9.551,8.02,8.02C8.02,6.489,8.906,5.247,10,5.247z M10,14.753c-2.187,0-3.96-1.063-3.96-2.377c0-0.854,0.757-1.596,1.885-2.015c0.508,0.745,1.245,1.224,2.076,1.224s1.567-0.479,2.076-1.224c1.127,0.418,1.885,1.162,1.885,2.015C13.961,13.689,12.188,14.753,10,14.753z M10,0.891c-5.031,0-9.109,4.079-9.109,9.109c0,5.031,4.079,9.109,9.109,9.109c5.031,0,9.109-4.078,9.109-9.109C19.109,4.969,15.031,0.891,10,0.891z M10,18.317c-4.593,0-8.317-3.725-8.317-8.317c0-4.593,3.724-8.317,8.317-8.317c4.593,0,8.317,3.724,8.317,8.317C18.317,14.593,14.593,18.317,10,18.317z"
+              ></path>
+            </svg>
+            <p>sod</p></button
+          ><button
+            class="inactive"
+            data-mtab="4"
+            onclick="mtabchange(this)"
+            data-mtabdescription="Profile"
+          >
+            <!--profile button-->
+            <svg id="quotation" viewBox="0 0 20 20">
+              <path
+                d="M10,10.9c2.373,0,4.303-1.932,4.303-4.306c0-2.372-1.93-4.302-4.303-4.302S5.696,4.223,5.696,6.594C5.696,8.969,7.627,10.9,10,10.9z M10,3.331c1.801,0,3.266,1.463,3.266,3.263c0,1.802-1.465,3.267-3.266,3.267c-1.8,0-3.265-1.465-3.265-3.267C6.735,4.794,8.2,3.331,10,3.331z"
+              ></path>
+              <path
+                d="M10,12.503c-4.418,0-7.878,2.058-7.878,4.685c0,0.288,0.231,0.52,0.52,0.52c0.287,0,0.519-0.231,0.519-0.52c0-1.976,3.132-3.646,6.84-3.646c3.707,0,6.838,1.671,6.838,3.646c0,0.288,0.234,0.52,0.521,0.52s0.52-0.231,0.52-0.52C17.879,14.561,14.418,12.503,10,12.503z"
+              ></path>
+            </svg>
+            <p>profile</p>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!--universal popup starts from here
+    note must be used in all use case-->
+    <div class="upop" id="upop" style="top: 50%">
+      <div class="head" id="upophead">
+        <div class="bck" onclick="history.go(-1)">
+          <!--popup close button-->
+          <svg class="svg-icon" viewBox="0 0 20 20">
+            <path
+              d="M18.271,9.212H3.615l4.184-4.184c0.306-0.306,0.306-0.801,0-1.107c-0.306-0.306-0.801-0.306-1.107,0
+          L1.21,9.403C1.194,9.417,1.174,9.421,1.158,9.437c-0.181,0.181-0.242,0.425-0.209,0.66c0.005,0.038,0.012,0.071,0.022,0.109
+          c0.028,0.098,0.075,0.188,0.142,0.271c0.021,0.026,0.021,0.061,0.045,0.085c0.015,0.016,0.034,0.02,0.05,0.033l5.484,5.483
+          c0.306,0.307,0.801,0.307,1.107,0c0.306-0.305,0.306-0.801,0-1.105l-4.184-4.185h14.656c0.436,0,0.788-0.353,0.788-0.788
+          S18.707,9.212,18.271,9.212z"
+            ></path>
+          </svg>
+        </div>
+        <div class="bar" id="utabname"></div>
+        <div class="bar" id="utabsearch">
+          <input type="search" placeholder="search " id="sbar" /><button
+            onclick="openresults()"
+          >
+            <!--search icon-->
+            <svg class="svg-icon" viewBox="0 0 20 20">
+              <path
+                d="M18.109,17.776l-3.082-3.081c-0.059-0.059-0.135-0.077-0.211-0.087c1.373-1.38,2.221-3.28,2.221-5.379c0-4.212-3.414-7.626-7.625-7.626c-4.212,0-7.626,3.414-7.626,7.626s3.414,7.627,7.626,7.627c1.918,0,3.665-0.713,5.004-1.882c0.006,0.085,0.033,0.17,0.098,0.234l3.082,3.081c0.143,0.142,0.371,0.142,0.514,0C18.25,18.148,18.25,17.918,18.109,17.776zM9.412,16.13c-3.811,0-6.9-3.089-6.9-6.9c0-3.81,3.089-6.899,6.9-6.899c3.811,0,6.901,3.09,6.901,6.899C16.312,13.041,13.223,16.13,9.412,16.13z"
+              ></path>
+            </svg>
+          </button>
+        </div>
+        <!--section that will differ acc. to the use case-->
+        <div class="icon" id="utabicons"></div>
+      </div>
+      <!--upop body //external use case bodies-->
+      <div class="bdy" id="ubody">
+        <div class="searchreco"><!--searchrecomandation--></div>
+
+        <div class="architect"><!--architect tab--></div>
+        <div class="likeditems" id="likeditems"><!--likeditems--></div>
+        <div class="cart" id="cart"><!--cart--></div>
+      </div>
+    </div>
+
+    <!--result popup-->
+    <div class="upop" id="uresults" style="z-index: 4">
+      <div class="head">
+        <div class="bck" onclick="history.go(-1)">
+          <svg class="svg-icon" viewBox="0 0 20 20">
+            <path
+              d="M18.271,9.212H3.615l4.184-4.184c0.306-0.306,0.306-0.801,0-1.107c-0.306-0.306-0.801-0.306-1.107,0
+          L1.21,9.403C1.194,9.417,1.174,9.421,1.158,9.437c-0.181,0.181-0.242,0.425-0.209,0.66c0.005,0.038,0.012,0.071,0.022,0.109
+          c0.028,0.098,0.075,0.188,0.142,0.271c0.021,0.026,0.021,0.061,0.045,0.085c0.015,0.016,0.034,0.02,0.05,0.033l5.484,5.483
+          c0.306,0.307,0.801,0.307,1.107,0c0.306-0.305,0.306-0.801,0-1.105l-4.184-4.185h14.656c0.436,0,0.788-0.353,0.788-0.788
+          S18.707,9.212,18.271,9.212z"
+            ></path>
+          </svg>
+        </div>
+        <div class="bar" id="querryname" style="font-weight: 500">cement</div>
+
+        <!--section that will differ acc. to the use case-->
+        <div class="icon" id="">
+          <button onclick="openupop(this)" data-type="Cart">
+            <!--b4-->
+            <svg class="svg-icon" viewBox="0 0 20 20">
+              <path
+                d="M17.696,9.368H2.305c-0.189,0-0.367,0.092-0.478,0.245c-0.11,0.155-0.141,0.352-0.08,0.532l2.334,6.918c0.081,0.238,0.305,0.4,0.556,0.4h10.735c0.253,0,0.478-0.162,0.557-0.402l2.323-6.917c0.062-0.179,0.03-0.376-0.079-0.531C18.062,9.459,17.886,9.368,17.696,9.368z M14.95,16.287H5.062l-1.938-5.743h13.753L14.95,16.287z"
+              ></path>
+              <path
+                d="M6.345,7.369c0.325,0,0.588-0.263,0.588-0.588c0-1.691,1.376-3.067,3.067-3.067c1.691,0,3.067,1.376,3.067,3.067c0,0.325,0.264,0.588,0.588,0.588c0.326,0,0.589-0.263,0.589-0.588c0-2.34-1.904-4.243-4.244-4.243c-2.34,0-4.244,1.903-4.244,4.243C5.757,7.106,6.02,7.369,6.345,7.369z"
+              ></path>
+            </svg>
+          </button>
+          <button onclick="openupop(this)" data-type="Search">
+            <!--b1-->
+            <svg class="svg-icon" viewBox="0 0 20 20">
+              <path
+                d="M18.109,17.776l-3.082-3.081c-0.059-0.059-0.135-0.077-0.211-0.087c1.373-1.38,2.221-3.28,2.221-5.379c0-4.212-3.414-7.626-7.625-7.626c-4.212,0-7.626,3.414-7.626,7.626s3.414,7.627,7.626,7.627c1.918,0,3.665-0.713,5.004-1.882c0.006,0.085,0.033,0.17,0.098,0.234l3.082,3.081c0.143,0.142,0.371,0.142,0.514,0C18.25,18.148,18.25,17.918,18.109,17.776zM9.412,16.13c-3.811,0-6.9-3.089-6.9-6.9c0-3.81,3.089-6.899,6.9-6.899c3.811,0,6.901,3.09,6.901,6.899C16.312,13.041,13.223,16.13,9.412,16.13z"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <!--upop body //external use case bodies-->
+      <div class="bdy" id="upopbody">
+        <div class="search_results_body" id="search_results_body"></div>
+      </div>
+    </div>
+
+    <div class="errcontainer" id="errcontainer">
+      <div class="errbox">Invalid email</div>
+    </div>
+    <!--product display page-->
+    <div
+      class="upop"
+      id="productdisplaypopup"
+      style="top: 100%; transition: 0.04s; display: flex"
+    >
+      <div class="head" id="productupophead">
+        <div class="bck" onclick="history.go(-1)">
+          <!--popup close button-->
+          <svg class="svg-icon" viewBox="0 0 20 20">
+            <path
+              d="M18.271,9.212H3.615l4.184-4.184c0.306-0.306,0.306-0.801,0-1.107c-0.306-0.306-0.801-0.306-1.107,0
+          L1.21,9.403C1.194,9.417,1.174,9.421,1.158,9.437c-0.181,0.181-0.242,0.425-0.209,0.66c0.005,0.038,0.012,0.071,0.022,0.109
+          c0.028,0.098,0.075,0.188,0.142,0.271c0.021,0.026,0.021,0.061,0.045,0.085c0.015,0.016,0.034,0.02,0.05,0.033l5.484,5.483
+          c0.306,0.307,0.801,0.307,1.107,0c0.306-0.305,0.306-0.801,0-1.105l-4.184-4.185h14.656c0.436,0,0.788-0.353,0.788-0.788
+          S18.707,9.212,18.271,9.212z"
+            ></path>
+          </svg>
+        </div>
+        <div class="bar" id="product_popup_name"></div>
+
+        <!--section that will differ acc. to the use case-->
+        <div class="icon" id="product_popup_icons"></div>
+      </div>
+      <!--upop body //external use case bodies-->
+      <div class="bdy" id="product_popup_body">
+        <div class="product_popup_bdy">
+          <div class="header"></div>
+          <div class="name">
+            <div class="product_popup_name">
+              <p id="product_card_product_name"></p>
+            </div>
+
+            <div class="product_popup_brand">
+              <div style="float: left">by&nbsp</div>
+              <div id="product_card_product_company"></div>
+            </div>
+
+            <div class="product_popup_mrp">
+              <div class="product_popup_price">
+                <div style="float: left">&#x20B9;</div>
+                <div id="product_card_product_price"></div>
+              </div>
+              <div class="product_popup_extras1">inclusive of all taxes</div>
+            </div>
+          </div>
+          <div class="data_product_promt delivery_promt">
+            <div class="delivery_bdy">
+              <p class="exchange_policy">Easy exchange</p>
+              <p>Will be delivered in one working day</p>
+            </div>
+          </div>
+          <div class="data_product_promt product_details">
+            <div class="head">Product description</div>
+            <div class="details_body">
+              A cement is a binder, a substance used for construction that sets,
+              hardens, and adheres to other materials to bind them together.
+              Cement is seldom used on its own, but rather to bind sand and
+              gravel (aggregate) together.
+              <div class="key_value_pair">
+                <div class="pair">Brand</div>
+                <div class="pair">Acc</div>
+              </div>
+              <div class="key_value_pair">
+                <div class="pair">Manufacturing location</div>
+                <div class="pair">Jaipur</div>
+              </div>
+              <div class="key_value_pair">
+                <div class="pair">Type</div>
+                <div class="pair">Portland</div>
+              </div>
+              <div class="key_value_pair">
+                <div class="pair">Weight</div>
+                <div class="pair">20kg per bag</div>
+              </div>
+            </div>
+          </div>
+          <div class="data_product_promt product_sellers">
+            <div class="head">Sellers</div>
+            <div class="sellers_bdy" id="slrcrd"></div>
+          </div>
+          <div class="data_product_promt product_reviews">
+            <div class="head">Reviews</div>
+            <div class="review_bdy">
+              <div class="section_review1">
+                <div class="rating_actual">
+                  <h1>3</h1>
+                  .
+                  <h2>2</h2>
+                  <svg class="svg-icon" viewBox="0 0 20 20">
+                    <path
+                      d="M17.684,7.925l-5.131-0.67L10.329,2.57c-0.131-0.275-0.527-0.275-0.658,0L7.447,7.255l-5.131,0.67C2.014,7.964,1.892,8.333,2.113,8.54l3.76,3.568L4.924,17.21c-0.056,0.297,0.261,0.525,0.533,0.379L10,15.109l4.543,2.479c0.273,0.153,0.587-0.089,0.533-0.379l-0.949-5.103l3.76-3.568C18.108,8.333,17.986,7.964,17.684,7.925 M13.481,11.723c-0.089,0.083-0.129,0.205-0.105,0.324l0.848,4.547l-4.047-2.208c-0.055-0.03-0.116-0.045-0.176-0.045s-0.122,0.015-0.176,0.045l-4.047,2.208l0.847-4.547c0.023-0.119-0.016-0.241-0.105-0.324L3.162,8.54L7.74,7.941c0.124-0.016,0.229-0.093,0.282-0.203L10,3.568l1.978,4.17c0.053,0.11,0.158,0.187,0.282,0.203l4.578,0.598L13.481,11.723z"
+                    ></path>
+                  </svg>
+                </div>
+                <div class="rating_actual_title">Rated by 1220 people</div>
+              </div>
+              <div class="section_review2">
+                <div class="bar_containers">
+                  <div class="bar_star_container">
+                    <div class="star">5</div>
+                    <div class="star">
+                      <svg class="svg-icon" viewBox="0 0 20 20">
+                        <path
+                          d="M17.684,7.925l-5.131-0.67L10.329,2.57c-0.131-0.275-0.527-0.275-0.658,0L7.447,7.255l-5.131,0.67C2.014,7.964,1.892,8.333,2.113,8.54l3.76,3.568L4.924,17.21c-0.056,0.297,0.261,0.525,0.533,0.379L10,15.109l4.543,2.479c0.273,0.153,0.587-0.089,0.533-0.379l-0.949-5.103l3.76-3.568C18.108,8.333,17.986,7.964,17.684,7.925 M13.481,11.723c-0.089,0.083-0.129,0.205-0.105,0.324l0.848,4.547l-4.047-2.208c-0.055-0.03-0.116-0.045-0.176-0.045s-0.122,0.015-0.176,0.045l-4.047,2.208l0.847-4.547c0.023-0.119-0.016-0.241-0.105-0.324L3.162,8.54L7.74,7.941c0.124-0.016,0.229-0.093,0.282-0.203L10,3.568l1.978,4.17c0.053,0.11,0.158,0.187,0.282,0.203l4.578,0.598L13.481,11.723z"
+                        ></path>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="bar_rating_bar">
+                    <div class="rating_bars">
+                      <div
+                        class="bar_fillers"
+                        style="background-color: rgb(247, 226, 39)"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="bar_containers">
+                  <div class="bar_star_container">
+                    <div class="star">4</div>
+                    <div class="star">
+                      <svg class="svg-icon" viewBox="0 0 20 20">
+                        <path
+                          d="M17.684,7.925l-5.131-0.67L10.329,2.57c-0.131-0.275-0.527-0.275-0.658,0L7.447,7.255l-5.131,0.67C2.014,7.964,1.892,8.333,2.113,8.54l3.76,3.568L4.924,17.21c-0.056,0.297,0.261,0.525,0.533,0.379L10,15.109l4.543,2.479c0.273,0.153,0.587-0.089,0.533-0.379l-0.949-5.103l3.76-3.568C18.108,8.333,17.986,7.964,17.684,7.925 M13.481,11.723c-0.089,0.083-0.129,0.205-0.105,0.324l0.848,4.547l-4.047-2.208c-0.055-0.03-0.116-0.045-0.176-0.045s-0.122,0.015-0.176,0.045l-4.047,2.208l0.847-4.547c0.023-0.119-0.016-0.241-0.105-0.324L3.162,8.54L7.74,7.941c0.124-0.016,0.229-0.093,0.282-0.203L10,3.568l1.978,4.17c0.053,0.11,0.158,0.187,0.282,0.203l4.578,0.598L13.481,11.723z"
+                        ></path>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="bar_rating_bar">
+                    <div class="rating_bars">
+                      <div
+                        class="bar_fillers"
+                        style="background-color: rgb(228, 209, 38)"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="bar_containers">
+                  <div class="bar_star_container">
+                    <div class="star">3</div>
+                    <div class="star">
+                      <svg class="svg-icon" viewBox="0 0 20 20">
+                        <path
+                          d="M17.684,7.925l-5.131-0.67L10.329,2.57c-0.131-0.275-0.527-0.275-0.658,0L7.447,7.255l-5.131,0.67C2.014,7.964,1.892,8.333,2.113,8.54l3.76,3.568L4.924,17.21c-0.056,0.297,0.261,0.525,0.533,0.379L10,15.109l4.543,2.479c0.273,0.153,0.587-0.089,0.533-0.379l-0.949-5.103l3.76-3.568C18.108,8.333,17.986,7.964,17.684,7.925 M13.481,11.723c-0.089,0.083-0.129,0.205-0.105,0.324l0.848,4.547l-4.047-2.208c-0.055-0.03-0.116-0.045-0.176-0.045s-0.122,0.015-0.176,0.045l-4.047,2.208l0.847-4.547c0.023-0.119-0.016-0.241-0.105-0.324L3.162,8.54L7.74,7.941c0.124-0.016,0.229-0.093,0.282-0.203L10,3.568l1.978,4.17c0.053,0.11,0.158,0.187,0.282,0.203l4.578,0.598L13.481,11.723z"
+                        ></path>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="bar_rating_bar">
+                    <div class="rating_bars">
+                      <div
+                        class="bar_fillers"
+                        style="background-color: rgb(177, 162, 28)"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="bar_containers">
+                  <div class="bar_star_container">
+                    <div class="star">2</div>
+                    <div class="star">
+                      <svg class="svg-icon" viewBox="0 0 20 20">
+                        <path
+                          d="M17.684,7.925l-5.131-0.67L10.329,2.57c-0.131-0.275-0.527-0.275-0.658,0L7.447,7.255l-5.131,0.67C2.014,7.964,1.892,8.333,2.113,8.54l3.76,3.568L4.924,17.21c-0.056,0.297,0.261,0.525,0.533,0.379L10,15.109l4.543,2.479c0.273,0.153,0.587-0.089,0.533-0.379l-0.949-5.103l3.76-3.568C18.108,8.333,17.986,7.964,17.684,7.925 M13.481,11.723c-0.089,0.083-0.129,0.205-0.105,0.324l0.848,4.547l-4.047-2.208c-0.055-0.03-0.116-0.045-0.176-0.045s-0.122,0.015-0.176,0.045l-4.047,2.208l0.847-4.547c0.023-0.119-0.016-0.241-0.105-0.324L3.162,8.54L7.74,7.941c0.124-0.016,0.229-0.093,0.282-0.203L10,3.568l1.978,4.17c0.053,0.11,0.158,0.187,0.282,0.203l4.578,0.598L13.481,11.723z"
+                        ></path>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="bar_rating_bar">
+                    <div class="rating_bars">
+                      <div
+                        class="bar_fillers"
+                        style="background-color: rgb(126, 115, 21)"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="bar_containers">
+                  <div class="bar_star_container">
+                    <div class="star">1</div>
+                    <div class="star">
+                      <svg class="svg-icon" viewBox="0 0 20 20">
+                        <path
+                          d="M17.684,7.925l-5.131-0.67L10.329,2.57c-0.131-0.275-0.527-0.275-0.658,0L7.447,7.255l-5.131,0.67C2.014,7.964,1.892,8.333,2.113,8.54l3.76,3.568L4.924,17.21c-0.056,0.297,0.261,0.525,0.533,0.379L10,15.109l4.543,2.479c0.273,0.153,0.587-0.089,0.533-0.379l-0.949-5.103l3.76-3.568C18.108,8.333,17.986,7.964,17.684,7.925 M13.481,11.723c-0.089,0.083-0.129,0.205-0.105,0.324l0.848,4.547l-4.047-2.208c-0.055-0.03-0.116-0.045-0.176-0.045s-0.122,0.015-0.176,0.045l-4.047,2.208l0.847-4.547c0.023-0.119-0.016-0.241-0.105-0.324L3.162,8.54L7.74,7.941c0.124-0.016,0.229-0.093,0.282-0.203L10,3.568l1.978,4.17c0.053,0.11,0.158,0.187,0.282,0.203l4.578,0.598L13.481,11.723z"
+                        ></path>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="bar_rating_bar">
+                    <div class="rating_bars">
+                      <div
+                        class="bar_fillers"
+                        style="background-color: rgb(83, 77, 15)"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="data_product_promt product_recomendations">
+            <div class="head">SIMILAR PRODUCTS</div>
+            <div class="recomendations_bdy">
+              <div class="card_holder_body">
+                <div class="row" id="recomendations_bdy"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="product_popup_btn" id="add_to_cart_likeditems_btn">
+          <div class="btns likeditems_productpopup_btn">Like</div>
+          <div class="btns addtocart_productpopup_btn">Add to cart</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

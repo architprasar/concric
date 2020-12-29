@@ -1,0 +1,1724 @@
+* {
+  box-sizing: border-box;
+
+}
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+body{
+margin:0;
+}
+span{
+font-family: 'Reem Kufi', sans-serif;
+}
+a{
+font-family: 'Reem Kufi', sans-serif;
+text-decoration:none;
+
+}
+.header{
+    position:relative;
+    width:100%;
+    background-image: linear-gradient(to right,#0099e6, #004080);
+    left:0;
+    background-repeat: no-repeat;
+    padding:0px 05px;
+    z-index:2;
+    object-fit:fill;
+
+    height:90%;
+    top:0;
+
+
+}
+
+
+@media screen and (max-width: 1000px) {
+ .header{
+ font-size:15px;
+   height:60px;
+   position:fixed;
+   display: inline;
+   left:0;
+   box-shadow:5px 0px 10px #404040;
+ }
+}
+.header h1{
+color:white;
+text-align:center;
+position: relative;
+top:30%;
+font-weight:10;
+font-size:70px;
+font-family: 'Reem Kufi', sans-serif;
+
+}
+
+@media screen and (max-width: 1000px) {
+ .header h1{
+display:none;
+ }
+}
+
+ .min{
+	font-family: 'Reem Kufi', sans-serif;
+ font-size:100px;
+color:white;
+margin:0;
+padding:0px 0px;
+ position: absolute;
+  text-align:left;
+  top:-90%;
+}
+@media screen and (min-width: 1000px) {
+ .min{
+width:0;
+display:block;
+ }
+}
+.searchbox
+{
+
+
+width:30%;
+position:relative;
+height:7%;
+left:35.5%;
+border-radius:6px;
+border:0px solid #a6a6a6;
+padding:0px 0px;
+top:35%;
+background-color:#0099cc;;
+box-shadow:0px 3px 10px #404040;
+
+
+}
+
+@media screen and (max-width: 1000px) {
+ .searchbox{
+ font-size:30px;
+  height:80%;
+  top:8%;
+left:20%;
+  position:absolute;
+  width:60%;
+  box-shadow:0px 0px 0px #404040;
+ }
+}
+.searchbox .in{
+border-radius:0px;
+font-family: 'Reem Kufi', sans-serif;
+border:0;
+font-size:15px;
+padding:0px 20px;
+float:left;
+z-index:-1;
+height:100%;
+width:85%
+
+
+
+
+}
+.searchbox .in:active{
+
+decoration:none;
+
+}
+.i{
+top:50%;
+left:50%;
+font-size:30px;
+
+
+}
+
+.searchbox .button{
+border-radius:5px;
+font-size:15px;
+border:0;
+position:static;
+color: white;
+text-align:center;
+background:transparent;
+padding:0px 0px;
+float:left;
+z-index:-1;
+height:100%;
+width:15%;
+}
+.searchbox:hover{
+
+  box-shadow:0px 3px 10px #0099cc;
+}
+.searchbox .button:hover{
+
+background-color:#0086b3;
+}
+
+
+.header2{
+    left:0;
+    padding:0px 0px;
+    top:0;
+    object-fit:fill;
+    z-index;-1;
+    background-repeat:no-repeat;
+    position:relative;
+    overflow:hidden;
+    border-radius:0px;
+    float:left;
+    width:100%;
+    height:80%;
+    border:0px solid #a6a6a6;
+
+
+
+
+}
+.header2 img{
+
+
+   object-fit:fill;
+width:100%;
+height:100%;
+
+}
+
+@media screen and (max-width: 1000px) {
+ .header2{
+  width:100%;
+    height:50%;
+    border:0px solid #a6a6a6
+ }
+}
+
+.menue{
+    left:0;
+     padding:30px 20px;
+     top:0%;
+     overflow:auto;
+    position:relative;
+    border-radius:5px;
+    float:left;
+    width:20%;
+    height:80%;
+    z-index:-1;
+    color: #a6a6a6;
+    border:0px solid #a6a6a6;
+
+font-family: 'Reem Kufi', sans-serif;
+
+
+}
+@media screen and (max-width: 1000px) {
+ .menue{
+  width:0%;
+    height:0%;
+    border:0px solid #a6a6a6
+ }
+}
+
+
+.main{
+    left:0;
+     padding:20px 50px;
+    top:0%;
+    overflow:hidden;
+    position:relative;
+    border-radius:5px;
+    font-family: 'Reem Kufi', sans-serif;
+
+    float:left;
+    width:100%;
+    outline-width:0px;
+    height:auto;
+    border:0px solid #a6a6a6;
+
+
+
+
+}
+@media screen and (max-width: 1000px) {
+ .main{
+  width:100%;
+    height:auto;
+    border:0px solid #a6a6a6;
+     padding:0px 5px;
+ }
+}
+
+.main2{
+    left:0;
+     padding:70px 50px;
+    top:0%;
+    overflow:hidden;
+    position:relative;
+    border-radius:5px;
+    font-family: 'Reem Kufi', sans-serif;
+
+    float:left;
+    width:100%;
+    outline-width:0px;
+    height:auto;
+    border:0px solid #a6a6a6;
+
+
+
+
+}
+@media screen and (max-width: 1000px) {
+ .main2{
+  width:100%;
+    height:100%;
+    border:0px solid #a6a6a6;
+     padding-top:100px;
+ }
+}
+
+
+.footer{
+    left:0;
+     padding:10px 70px;
+   bottom:0%;
+    position:relative;
+    background-image: linear-gradient(to right,#0099e6, #004080);
+    overflow:hidden;
+
+
+    width:100%;
+    height:50%;
+    border:0px solid #a6a6a6;
+}
+
+
+
+.login{
+
+position:absolute;
+top:5%;
+background:transparent;
+border:none;
+left:89%;
+cursor:pointer;
+overflow:hidden;
+color:white;
+}
+
+@media screen and (max-width: 1000px) {
+ .login{
+ width:0px;
+ }
+}
+.card{
+top:20%;
+left:35%;
+color:;
+position:fixed;
+width:0;
+height:0;
+border:0px solid #ffffff;
+padding:0px 0px;
+z-index:1;
+overflow: hidden;
+background:#0099e6 ;
+ border-radius:8px;
+ transition: 0.2s;
+  box-shadow:0px 2px 3px black;
+  z-index:2;
+
+
+}
+@media screen and (max-width: 1000px) {
+ .card{
+
+ }
+}
+
+.in{
+border-radius:0px;
+font-family: 'Reem Kufi', sans-serif;
+border:0;
+font-size:15px;
+padding:0px 20px;
+top:50%;
+height:40px;
+width:100%;
+}
+
+.inbutton{
+
+border-radius:0px;
+font-family: 'Reem Kufi', sans-serif;
+border:0;
+font-size:20px;
+padding:40px 20px;
+color:white;
+background:transparent;
+height:40px;
+width:100%;
+}
+.card label{
+font-size:20px;
+padding:10px 10px;
+}
+.card h2{
+color:white;
+text-align:center;
+font-weight:10;
+font-size:40px;
+z-index:1;
+font-family: 'Reem Kufi', sans-serif;
+
+}
+.line{
+width:0%;
+height:4px;
+transition:0.3s;
+background:black;
+}
+.line .in:hover{
+width:100%
+}
+.card .close
+{
+position:relative;
+top:0%;
+background:transparent;
+border:none;
+font-size:30px;
+fo-weight:10;
+left:90%;
+cursor:pointer;
+overflow:hidden;
+color:white;
+
+
+}
+
+
+.card .content
+{
+color:#ffffff;
+font-family: 'Reem Kufi', sans-serif;
+top:30%;
+overflow:hidden;
+positio:relative;
+font-size:50px;
+padding:0px 0px;
+decoration:none;
+
+}
+@media screen and (max-width: 1000px) {
+ .card .content{
+ font-size:30px;
+ }
+}
+
+
+.menue1_container{
+color:white;
+position: absolute;
+ top: 8px;
+  left: 90%;
+  font-size:30px;
+}
+@media screen and (min-width: 1000px) {
+ .menue1_container{
+width:0;
+visibility:hidden;
+ }
+}
+
+.mcard{
+
+position:absolute;
+top:12%;
+left:55%;
+color:white;
+width:40%;
+height:0;
+border:0px solid #bfbfbf;
+ background-image: linear-gradient(to right,#0099e6, #004080);
+padding:0px 0px;
+position:fixed;
+overflow: hidden;
+z-index:1;
+ border-radius:8px;
+ transition: 0.3s;
+
+}
+@media screen and (min-width: 1000px) {
+ .mcard{
+width:0;
+display:none;
+
+ }
+}
+
+.mcard .content
+{
+color:#ffffff;
+padding:10px 0px;
+display:block;
+font-family: 'Reem Kufi', sans-serif;
+text-align:center;
+position:relative;
+font-size:90%;
+cursor:pointer;
+z-index:1;
+decoration:none;
+
+}
+
+
+.bar1, .bar2, .bar3 {
+  width: 30px;
+  height: 5px;
+  background-color: white;
+  z-index:1;
+  margin: 6px 0;
+  transition: 0.4s;
+  webkit-transform:;
+  transform:  ;
+}
+
+
+.change .bar1 {
+  -webkit-transform: rotate(-430deg) translate(-8px, 6px) ;
+  transform: rotate(-415deg) translate(-9px, 6px) ;
+  width:40px;
+}
+
+
+.change .bar2 {
+  opacity: 0;
+}
+
+
+.change .bar3 {
+  -webkit-transform: rotate(50deg) translate(-8px, -8px) ;
+  transform: rotate(45deg) translate(-8px, -8px) ;
+    width:40px;
+}
+
+
+
+.bottomtitle{
+
+text-align:center;
+color:white;
+font-size:20px;
+top:96%;
+position:relative;
+font-family: 'Reem Kufi', sans-serif;
+}
+
+.card2{
+top:20%;
+left:10%;
+color:;
+position:fixed;
+width:0;
+height:0;
+border:0px solid #ffffff;
+padding:0px 0px;
+z-index:3;
+overflow: hidden;
+background:#0099e6 ;
+ border-radius:8px;
+ transition: 0.2s;
+  box-shadow:0px 2px 10px #a6a6a6;
+  z-index:3;
+
+
+}
+@media screen and (min-width: 1000px) {
+ .card2{
+display:none;
+ }
+}
+
+.card2 label{
+font-size:20px;
+padding:10px 10px;
+}
+.card2 h2{
+color:white;
+text-align:center;
+font-weight:10;
+font-size:40px;
+z-index:1;
+font-family: 'Reem Kufi', sans-serif;
+
+}
+
+.card2 .close
+{
+position:relative;
+top:0%;
+background:transparent;
+border:none;
+font-size:30px;
+fo-weight:10;
+left:90%;
+cursor:pointer;
+overflow:hidden;
+color:white;
+
+
+}
+
+
+.card2 .content
+{
+color:#ffffff;
+font-family: 'Reem Kufi', sans-serif;
+top:30%;
+positio:relative;
+font-size:50px;
+padding:0px 0px;
+decoration:none;
+
+}
+@media screen and (max-width: 1000px) {
+ .card2 .content{
+ font-size:30px;
+ }
+}
+
+.services{
+letter-spacing:6px;
+font-weight:100;
+padding:0px 0px;
+top:3%;
+text-align:center;
+color:#a6a6a6;
+}
+.active{
+border-radius:0px;
+font-family: 'Reem Kufi', sans-serif;
+border:0;
+font:size
+float:left;
+padding:0px 0px;
+ background-image: linear-gradient(to right,#ffffff,#ffffff,#80ccff);
+margin:0;
+z-index:-1;
+height:30px;
+color:#808080;
+
+}
+.activeline{
+
+width:100%;
+height:.5px;
+transition:0.3s;
+background:;
+border-radius:10px;
+}
+
+
+.servicecards-list {
+
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin:0px;
+
+}
+
+@media screen and (max-width: 1000px) {
+ .servicecards-list{
+width:100%;
+ }
+}
+.servicecards .servicecards_image {
+  width: inherit;
+  height: inherit;
+
+  border-radius: 3px;
+  position:relative;
+}
+.servicecards .servicecards_image img {
+  width: 99.7%;
+  height: 100%;
+  border-radius: 10px;
+  object-fit:cover ;
+
+
+
+}
+
+.servicecards{
+ background:white;
+ width: 250px;
+ border-radius:14px;
+ height: 250px;
+ overflow:hidden;
+ cursor: pointer;
+ border: 1px solid #bfbfbf;
+ margin:20px;
+ z-index:1;
+ transition: 0.1s;
+ padding:0px 0px;
+
+}
+@media screen and (max-width: 1000px) {
+ .servicecards{
+ width:100%;
+ height: 500px;
+ margin-bottom:40px;
+ margin-left:0px;
+ margin-right:0px;
+  padding:0px 0px;
+  z-index:0;
+
+ }
+}
+
+@media screen and (max-width: 1000px) {
+ .servicedetail{
+display:none;
+
+ }
+}
+.holder{
+
+display:flex;
+
+
+}
+
+.servicecards .title{
+text-align:center;
+position:relative;
+top:-30%;
+font-size:40px;
+font-family: 'Reem Kufi', sans-serif;
+background:white;
+height:30%;
+color:#999999;
+overflow:hidden;
+z-index:1;
+transition:0.1s;
+}
+.servicecards:hover .title{
+visibility:hidden;
+}
+
+
+.signin_input{
+border-radius:0px;
+font-family: 'Reem Kufi', sans-serif;
+border:2px solid #0099e6;
+border-radius:3px;
+font-size:15px;
+padding:0px 20px;
+outline: none;
+top:50%;
+height:40px;
+width:100%;
+}
+
+.signup{
+color:#0099e6;
+
+}
+
+ .signup_header{
+	font-family: 'Reem Kufi', sans-serif;
+     font-size:60px;
+    color:#0099e6;
+    margin:0;
+    padding-bottom:0px;
+     position:fixed;
+     z-index:1;
+     left:2%;
+      text-align:left;
+      top:-8%;
+}
+.signup_header h1{
+padding:0px;
+margin:0px;
+
+}
+
+.signup_button{
+
+border-radius:0px;
+font-family: 'Reem Kufi', sans-serif;
+border:0;
+border-radius:3px;
+font-size:25px;
+padding:0px 0px;
+color:white;
+outline: none;
+background:#0099e6;
+font-weight:10;
+height:40px;
+width:100%;
+cursor:pointer;
+transition:0.2s;
+}
+
+.signup_button:hover{
+background:#ffffff;
+
+color:#0099e6;
+
+
+}
+
+
+.profile-pic {
+  width: 50px;
+  height: 50px;
+  margin: 0px auto;
+   object-fit: cover;
+  transition: 0.1s;
+  border-radius: 50%;
+  top:-10%;
+  border: 1px solid black;
+  @include trans($time: .3s);
+  &:hover {
+    cursor: pointer;
+    transform: translateY(-10px) scale(1.3);
+  }
+}
+
+
+.profileholder{
+
+text-align:center;
+left:85%;
+top:3%;
+font-family: 'Raleway', sans-serif;
+position:absolute;
+height:20%;
+width:10%;
+}
+@media screen and (max-width: 1000px) {
+ .profileholder{
+display:none;
+
+ }
+}
+.profile-picbig {
+  width: 45px;
+  height: 45px;
+  margin: 5px;
+   object-fit: cover;
+  border-radius: 50%;
+  position:relative;
+
+  border: 1px solid white;
+
+}
+.username{
+font-family: 'Reem Kufi', sans-serif;
+ position:relative;
+ color:white;
+ letter-spacing:1px;
+ bottom:0;
+ cursor:pointer;
+ padding-top:0px;
+margin:0px;
+}
+
+
+.profiledrop{
+
+top:10%;
+left:80%;
+color:;
+position:absolute;
+width:140px;
+height:0px;
+border:0px solid #ffffff;
+padding:0px 0px;
+z-index:3;
+overflow: hidden;
+visibility:hidden;
+background:#ffffff ;
+font-family: 'Raleway', sans-serif;
+ border-radius:10px;
+ transition: 0.2s;
+
+
+  z-index:3;
+}
+
+@media screen and (max-width: 1000px) {
+ .profiledrop{
+display:none;
+ }
+}
+
+.profiledrop .ab{
+text-decoration:none;
+font-family: 'Raleway', sans-serif;
+width:100%;
+height:35px;
+overflow:hidden;
+padding:0px 8px;
+
+font-size:10px;
+color:#d9d9d9;
+}
+.profiledrop .ab:hover{
+
+background:#cccccc;
+
+}
+.profiledrop a{
+color:#333333;
+top:20%;
+padding:0px 0px;
+letter-spacing:1px;
+position:relative;
+font-family: 'Nanum Gothic', sans-serif;
+text-decoration:none;
+}
+
+.p_header{
+    position:fixed;
+    width:100%;
+    background: white;
+    left:0;
+    background-repeat: no-repeat;
+    padding:10px 05px;
+    z-index:1;
+    object-fit:fill;
+    font-family: 'Reem Kufi', sans-serif;
+     font-size:20px;
+    color:#0099e6;
+    height:60px;
+    top:0;
+    box-shadow: 0px 1px 10px #bfbfbf;
+
+
+}
+.p_header h1{
+margin:0px;
+top:-25%;
+padding:0px 100px;
+position:relative;
+}
+@media screen and (max-width: 1000px) {
+ .p_header h1{
+width:0;
+height:0px;
+
+display:none;
+ }
+}
+.p_header h2{
+margin:0px;
+top:-80%;
+padding:0px 30px;
+font-size:70px;
+position:relative;
+}
+@media screen and (min-width: 1000px) {
+ .p_header h2{
+width:0;
+height:0px;
+display:none;
+ }
+}
+.p_main{
+
+       left:0;
+     padding-top:60px;
+    top:0%;
+    overflow:auto;
+    position:relative;
+    border-radius:5px;
+    font-family: 'Reem Kufi', sans-serif;
+    display:none;
+    float:left;
+    width:80%;
+    outline-width:0px;
+    height:100%;
+    border:0px solid #a6a6a6;
+
+
+
+}
+
+
+@media screen and (max-width: 1000px) {
+ .p_main{
+width:100%;
+ }
+}
+.p_picbig {
+  width: 45px;
+  height: 45px;
+  margin: 5px;
+   object-fit: cover;
+  border-radius: 50%;
+  position:relative;
+  float:left;
+  border: 1px solid white;
+
+}@media screen and (max-width: 1000px) {
+ .p_picbig{
+width:0;
+height:0px;
+
+display:none;
+ }
+}
+.p_holder{
+box-sizing: border-box;
+left:80%;
+top:3%;
+font-size:20px;
+font-family: 'Raleway', sans-serif;
+position:absolute;
+height:100%;
+display: inline-block;
+color:black;
+width:20%;
+}
+@media screen and (max-width: 1000px) {
+ .p_holder{
+left:75%;
+width:20%;
+ font-size:15px;
+ }
+}
+.p_username{
+display: inline-block;
+margin:0px;
+float:left;
+
+
+padding:10px 20px;
+}
+@media screen and (max-width: 1000px) {
+ .p_username{
+display:none;
+ }
+}
+
+.p_menue{
+    left:0;
+     padding-top:60px;
+     top:0%;
+     padding-left:0px;
+     padding-right:0px;
+     overflow:auto;
+    position:relative;
+    float:left;
+    width:20%;
+    height:100%;
+    z-index:0;
+    background:white;
+    color: #a6a6a6;
+    display:block;
+    border:0px solid #a6a6a6;
+     box-shadow: 5px 0px 10px #8c8c8c;
+
+font-family: 'Reem Kufi', sans-serif;
+
+
+}
+@media screen and (max-width: 1000px) {
+ .p_menue{
+display:none;
+z-index:1;
+position:fixed;
+ width:80%;
+ }
+}
+
+.bars1, .bars2, .bars3 {
+  width: 30px;
+  height: 5px;
+  background-color:#737373;
+  z-index:1;
+   box-sizing: border-box;
+  margin: 6px 0;
+  transition: 0.4s;
+  webkit-transform:;
+  transform:  ;
+}
+
+
+.p_menue1_container{
+color:white;
+position: absolute;
+ top: 8px;
+  right: 15px;
+  font-size:30px;
+}
+@media screen and (min-width: 1000px) {
+ .p_menue1_container{
+display:none;
+ }
+}
+
+.p_change .bars1 {
+  -webkit-transform: rotate(-430deg) translate(-8px, 6px) ;
+  transform: rotate(-415deg) translate(-9px, 6px) ;
+  width:40px;
+}
+
+
+.p_change .bars2 {
+  opacity: 0;
+}
+
+
+.p_change .bars3 {
+  -webkit-transform: rotate(50deg) translate(-8px, -8px) ;
+  transform: rotate(45deg) translate(-8px, -8px) ;
+    width:40px;
+}
+
+
+
+.p_cover{
+width:100%;
+height:280px;
+padding:0px 0px;
+margin-top:60px;
+position:absolute;
+top:0;
+
+
+
+}
+@media screen and (max-width: 1000px) {
+ .p_cover{
+
+height:200px;
+}
+}
+.p_cover .mm{
+width:inherit;
+height:100%;
+object-fit:cover;
+}
+
+.p_pic{
+  width: 200px;
+  height: 200px;
+  margin: 5px;
+   object-fit: cover;
+  border-radius: 50%;
+  position:relative;
+  float:left;
+  border: 3px solid white;
+
+}
+
+.p_holderbig{
+box-sizing: border-box;
+left:70px;
+top:30px;
+font-weight:100;
+letter-spacing:3px;
+font-size:20px;
+font-family: 'Raleway', sans-serif;
+position:absolute;
+height:100%;
+display: inline-block;
+color:white;
+width:80%;
+}@media screen and (max-width: 1000px) {
+ .p_holderbig{
+width:70%;
+left:20px;
+font-size:10px;
+top:50px;
+ }
+}
+
+.p_usernamebig{
+display: inline-block;
+margin:0px;
+font-family: 'Raleway', sans-serif;
+float:left;
+padding:70px 40px;
+}
+
+@media screen and (max-width: 1000px) {
+ .p_usernamebig{
+padding:30px 20px;
+ }
+}
+@media screen and (max-width: 1000px) {
+ .p_pic{
+width: 80px;
+  height: 80px;
+ }
+}
+.p_picsmall{
+  width: 70px;
+  height: 70px;
+  margin: 5px;
+   object-fit: cover;
+  border-radius: 50%;
+  position:relative;
+  float:left;
+  border: 3px solid white;
+
+}
+.p_holdersmall{
+box-sizing: border-box;
+left:2%;
+top:20%;
+float:left;
+font-size:10px;
+font-family: 'Raleway', sans-serif;
+position:absolute;
+height:100%;
+display: inline-block;
+color:white;
+width:90%;
+
+
+}
+
+.p_coversmall{
+width:100%;
+height:150px;
+padding:0px 0px;
+margin-top:60px;
+position:absolute;
+top:0;
+overflow:hidden;
+
+
+
+}
+.p_coversmall .mm{
+width:inherit;
+height:100%;
+object-fit:cover;
+}
+.p_usernamesmall{
+display: inline-block;
+margin:0px;
+font-size:15px;
+letter-spacing:2px;
+font-family: 'Raleway', sans-serif;
+float:left;
+padding:25px 20px;
+}
+
+.but{
+position:relative;
+background:white;
+width:100%;
+font-family: 'Reem Kufi', sans-serif;
+height:40px;
+padding:0px 0px;
+padding:0px 10px;
+font-size:20px;
+margin:0px;
+text-align:left;
+color:#666666;
+border:0px solid #f2f2f2;
+outline:none;
+}
+.but:hover{
+background: #d9d9d9;
+
+}
+.p_menue .container{
+float:left;
+width:100%;
+height:auto;
+top:150px;
+transition:0.1s;
+position:relative;
+
+}
+
+
+.p_menue .p_on{
+
+width:20%;
+height:40px;
+background:#ff0000;
+box-shadow: 1px -5px 10px #a6a6a6;
+position:fixed;
+bottom:0;
+}
+@media screen and (max-width: 1000px) {
+ .p_menue .p_on{
+   width:80%;
+ }
+}
+.p_menue .p_on:hover{
+background:#ff4d4d;
+
+}
+
+.p_on button{
+background:transparent;
+border:0px;
+font-size:20px;
+color:white;
+width:100%;
+font-family: 'Reem Kufi', sans-serif;
+cursor:pointer;
+outline:white;
+height:inherit;
+}
+
+.P_order_h1{
+text-align:center;
+}
+
+.p_order_card
+{
+    background:white;
+    height:300px;
+    width:95%;
+    overflow:hidden;
+    margin-left:30px;
+    margin-top:40px;
+    margin-bottom:40px;
+    border:1px solid #cccccc;
+    box-shadow: 1px 2px 10px 3px #a6a6a6;
+
+}
+@media screen and (max-width: 1000px) {
+ .p_order_card{
+width: 100%;
+margin-left:0px;
+    margin-right:20px;
+  height: 250px;
+ }
+}
+
+.P_order_card_header
+{
+    width:100%;
+    height:60px;
+    border-bottom:1px solid #cccccc;
+
+}
+
+
+.P_order_card_header .check{
+border-right:0px solid #cccccc;
+height:60px;
+width:6%;
+float:left;
+background:#33ff33;
+border-bottom:1px solid #cccccc;
+}
+@media screen and (max-width: 1000px) {
+ .p_order_card_header .check{
+width:60px;
+ }
+}
+.P_order_card_header .oi{
+border:0px;
+background:#ffffff;
+color:black;
+border-bottom:1px solid #cccccc;
+font-family: 'Reem Kufi', sans-serif;
+width:94%;
+float:left;
+font-size:30px;
+padding:0px 0px;
+height:inherit;
+outline:none;
+}
+
+@media screen and (max-width: 1000px) {
+ .p_order_card_header .oi{
+width:310px;
+font-size:20px;
+ }
+}
+
+
+.p_order_card .pinfo{
+float:left;
+height:80%;
+text-wrap:wrap;
+overflow:auto;
+padding:5px 5px ;
+width:25%;
+background:white;
+border-right:1px solid #cccccc;
+color:#666666;
+
+}
+
+@media screen and (max-width: 1000px) {
+ .p_order_card .pinfo{
+width:40%;
+ }
+}
+.p_order_card .pdesc{
+float:left;
+height:80%;
+padding:10px;
+text-wrap:wrap;
+width:75%;
+background:white;
+
+color:#666666;
+
+}
+@media screen and (max-width: 1000px) {
+ .p_order_card .pdesc{
+width:60%;
+ }
+}
+
+.p_order_card .pinfo .p_head{
+text-align:center;
+
+}
+
+.p_order_card .pdesc p{
+padding:0px 0px ;
+margin:0px;
+margin-bottom:30px;
+font-size:20px;
+
+}
+
+
+.p_address_button{
+width:200px;
+height:40px;
+border-radius:5px;
+overflow:hidden;
+border:0px;
+background:#0099e6;
+color:white;
+font-size:30px;
+
+margin:40px;
+font-family: 'Reem Kufi', sans-serif;
+box-shadow:0px 3px 8px #cccccc;
+transition:0.1s;
+outline:none;
+}
+
+
+.p_add_holder{
+width:95%;
+height:500px;
+margin:30px;
+background:white;
+padding:20px 20px;
+border:1px solid #cccccc;
+border-radius:8px;
+}
+
+@media screen and (max-width: 1000px) {
+ .p_add_holder{
+margin:9px;
+ }
+}
+
+
+.p_add_holder .heading{
+
+text-align:center;
+margin-bottom:50px;
+
+}
+
+.p_add_holder .act_address{
+floa:left;
+font-size:20px;
+
+}
+.p_add_holder .keys{
+font-size:20px;
+margin-bottom:30px;
+floa:left;
+}
+
+.p_add_holder .edit{
+
+border:none;
+float:right;
+width:60px;
+font-size:15px;
+margin:5px;
+height:30px;
+color:white;
+border-radius:5px;
+background:#0099e6;
+font-family: 'Reem Kufi', sans-serif;
+}
+
+
+.p_add_holder .remove{
+
+border:none;
+float:right;
+width:60px;
+font-size:15px;
+margin:5px;
+height:30px;
+color:white;
+border-radius:5px;
+background:#ff0000;
+font-family: 'Reem Kufi', sans-serif;
+}
+
+.active {
+  background-color: #ccc;
+}
+
+.edit_p{
+
+border:none;
+left:80%;
+width:80px;
+font-size:15px;
+margin:5px;
+height:30px;
+color:white;
+top:80%;
+position:absolute;
+border-radius:5px;
+background:#ff0000;
+font-family: 'Reem Kufi', sans-serif;
+
+
+
+}
+
+
+.editwindow{
+width:40%;
+height:0%;
+transition:0.2s;
+background:white;
+margin-top:0px;
+position:fixed;
+padding:0px 0px;
+z-index:1;
+display:none;
+border-radius:10px;
+overflow:auto;
+box-shadow:4px 0px 10px 4px #cccccc;
+font-family: 'Reem Kufi', sans-serif;
+left:40%;
+}
+@media screen and (max-width: 1000px) {
+ .editwindow{
+width: 98%;
+left:1%;
+margin-left:0px;
+    margin-right:20px;
+  height: 0%;
+ }
+}
+
+
+
+.p_picedit{
+  width: 150px;
+  height: 150px;
+  margin: 5px;
+  margin-left:35%;
+   object-fit: cover;
+  border-radius: 50%;
+  position:relative;
+  float:left;
+  border: 3px solid white;
+
+}
+.p_holderedit{
+box-sizing: border-box;
+left:2%;
+top:10%;
+float:left;
+font-size:10px;
+font-family: 'Raleway', sans-serif;
+position:absolute;
+height:100%;
+display: inline-block;
+color:white;
+width:90%;
+
+
+}
+
+.p_coveredit{
+width:100%;
+height:200px;
+padding:0px 0px;
+margin-top:60px;
+position:absolute;
+float:left;
+top:0;
+overflow:hidden;
+
+
+
+}
+.p_coveredit .mm{
+width:inherit;
+height:100%;
+object-fit:cover;
+}
+
+.p_ehead{
+width:100%;
+height:60px;
+letter-spacing:3px;
+text-align:center;
+background:white;
+position:relative;
+padding:10px 10px;
+font-family: 'Reem Kufi', sans-serif;
+font-size:30px;
+box-shadow:8px -3px 8px 4px black;
+z-index:1;
+
+}
+.p_ehead p{
+
+padding:0px 0px;
+
+
+}
+
+.e_container{
+margin-top:250px;
+font-family: 'Raleway', sans-serif;
+}
+.e_input_name{
+border-radius:0px;
+font-family: 'Reem Kufi', sans-serif;
+border:2px solid #0099e6;
+border-radius:3px;
+font-size:15px;
+padding:0px 20px;
+outline: none;
+top:50%;
+margin-left:9%;
+margin-right:10%;
+margin-bottom:9%;
+float:left;
+height:40px;
+width:30%;
+}
+@media screen and (max-width: 1000px) {
+ .e_input_name{
+margin-left:10px;
+margin-right:0px;
+margin-bottom:40px;
+width:90%;
+height:60px;
+font-size:20px;
+ }
+}
+.e_input{
+border-radius:0px;
+font-family: 'Reem Kufi', sans-serif;
+border:2px solid #0099e6;
+border-radius:3px;
+font-size:15px;
+padding:0px 20px;
+outline: none;
+top:50%;
+margin-top:4px;
+margin-bottom:40px;
+height:40px;
+width:80%;
+margin-left:9%;
+}
+
+@media screen and (max-width: 1000px) {
+ .e_input{
+margin-left:10px;
+margin-right:0px;
+margin-bottom:30px;
+width:90%;
+height:60px;
+font-size:20px;
+ }
+}
+.r{
+
+margin-top:20px;
+margin-left:9%;
+
+}
+@media screen and (max-width: 1000px) {
+ .r{
+ font-size:20px;
+margin-left:5%;
+ }
+}
+
+.e_radio{
+margin-bottom:40px;
+font-size:15px;
+}
+
+.e_close{
+
+position:absolute;
+top:4%;
+background:transparent;
+border:none;
+font-size:30px;
+fo-weight:10;
+left:90%;
+cursor:pointer;
+overflow:hidden;
+color:black;
+}
+
+.edit_u{
+border:none;
+left:40%;
+width:80px;
+font-size:15px;
+margin:5px;
+height:30px;
+color:white;
+
+position:absolute;
+border-radius:5px;
+background:#ff0000;
+font-family: 'Reem Kufi', sans-serif;
+
+
+}
+
+
+.e_add_cont{
+margin-top:60px;
+margin-left:20px;
+margin-right:20px;
+}
+
+.add_input{
+border-radius:0px;
+font-family: 'Reem Kufi', sans-serif;
+border:2px solid #0099e6;
+border-radius:3px;
+font-size:15px;
+padding:0px 20px;
+outline: none;
+top:50%;
+margin-bottom:40px;
+margin-bottom:40px;
+height:40px;
+width:100%;
+
+}

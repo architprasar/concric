@@ -1,0 +1,622 @@
+@import 'https://fonts.googleapis.com/css?family=Ubuntu:300, 400, 500, 700';
+
+*, *:after, *:before {
+box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.card-list a{
+padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+display:block;
+}
+
+
+.svg-container {
+  position: absolute;
+   font-family: 'Raleway', sans-serif;
+
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: -1;
+}
+span{
+cursor: pointer;
+}
+svg {
+
+cursor: pointer;
+
+
+
+  }
+
+  &:hover path {
+
+    d: path("M 800 300 Q 400 250 0 300 L 0 0 L 800 0 L 800 300 Z");
+  }
+}
+
+body {
+  background: #ffffff;
+  font-weight:200;
+
+  position: relative;
+}
+
+h3 {
+  font-weight: 100;
+  letter-spacing:6px;
+  color:#d9d9d9;
+font-family: 'Roboto', sans-serif;
+}
+
+header {
+  color: #fff;
+  padding-top: 10vw;
+  padding-bottom: 30vw;
+  letter-spacing: 4.5px;
+  font-weight:200;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+}
+
+
+
+.headsearch{
+border:none;
+margin: 0px 0px;
+ padding: 7px 25px;
+ font-family: 'Antic Slab', serif;
+background-color: #e6e6e6;
+
+border-radius: 6.5px;
+}
+
+.headsearch:hover {
+background-color:  ;
+ transition: 2s;
+}
+.headbutton:hover {
+color: red;
+font-family: 'Raleway', sans-serif;
+ transition: 2s;
+}
+.headbutton{
+border:none;
+font-family: 'Antic Slab', serif;
+color:white;
+margin: 0px 0px;
+ padding: 5px 15px;
+background: transparent;
+border-radius: 6.5px;
+
+}
+.centerss {
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+ background-color: #ddhhd;
+  border: none;
+  color: black;
+  padding: 0px 0px;
+  text-align: center;
+  text-decoration: none;
+
+  display: inline-block;
+  margin: 0px 0px;
+  border-radius: 6.5px;
+  margin: 0;
+
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-90%, -50%);
+  transform: translate(9%, 200%);
+}
+
+
+
+.login_button{
+color:white;
+position: absolute;
+ top: 2%;
+  left: 95%;
+
+}
+.profile_button{
+color:white;
+position: absolute;
+ top: -3%;
+  left: 81%;
+
+}
+.register_button{
+color:white;
+position: absolute;
+ top: 120%;
+  left: 48%;
+}
+
+.overlay {
+
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  background-color:black;
+  background-color: rgba(0,0,0, 0.9);
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+
+.overlay-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+.overlay h1 {padding: 8px;
+font-family: 'Raleway', sans-serif;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;}
+
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+
+@media screen and (max-height: 450px) {
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
+}
+
+.input_login{
+
+border:none;
+
+height:30px;
+margin: 0px 0px;
+ padding: 8px 15px;
+ font-family: 'Lobster', cursive;
+
+background-color: #e6e6e6;
+border-radius: 16px;
+}
+
+
+.overlay2 {
+
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  background-color:white;
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+.overlay2-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+
+.overlay2 a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+.overlay2 h1 {padding: 8px;
+font-family: 'Raleway', sans-serif;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;}
+
+.overlay2 a:hover, .overlay2 a:focus {
+  color: #f1f1f1;
+}
+
+
+.overlay2 .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+
+@media screen and (max-height: 450px) {
+  .overlay2 a {font-size: 20px}
+  .overlay2 .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
+}
+.input_signup{
+
+border:none;
+color:white;
+height:30px;
+margin: 0px 0px;
+ padding: 8px 15px;
+font-family: 'Raleway', sans-serif;
+
+background-color: black;
+border-radius: 16px;
+}
+
+.signupbutton{
+border:solid
+text-weight:bold;
+font-family: 'Raleway', sans-serif;
+color:black;
+margin: 0px 0px;
+
+ padding: 5px 15px;
+background: transparent;
+border-radius: 16px;
+
+}
+
+.cards-list {
+  z-index: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.card {
+  margin: 30px;
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+ box-shadow: 2px 2px 10px 4px rgba(0,0,0,0.10), -2px -2px 10px 4px rgba(0,0,0,0.10);
+  cursor: pointer;
+  transition: 0.1s;
+}
+
+.services{
+font-weight: bold;
+text-align:center;
+
+}
+
+.card .card_image {
+  width: inherit;
+  height: inherit;
+  border-radius: 10px;
+}
+
+.card .card_image img {
+  width: inherit;
+  height: inherit;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.card .card_title {
+  text-align: center;
+  border-radius: 0px 0px 40px 40px;
+  font-family: 'Antic Slab', serif;
+  font-size: 25px;
+  margin-top: -30px;
+letter-spacing: 5px;
+  bottom: 1px;
+  height: 40px;
+}
+
+.card:hover {
+  transform: scale(0.9, 0.9);
+  box-shadow: 2px 2px 10px 4px rgba(0,0,0,0.10), -2px -2px 10px 4px rgba(0,0,0,0.10);
+}
+
+.title-white {
+  color: black;
+}
+
+.title-black {
+  color: black;
+}
+
+@media all and (max-width: 500px) {
+  .card-list {
+    /* On small screens, we are no longer using row direction but column */
+    flex-direction: column;
+  }
+}
+
+
+
+
+
+
+.row {margin: 0px 50px;
+
+padding:px 30px;
+}
+
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.column {
+  float: left;
+  width: 0%;
+  padding: 0px 0px;
+  align:center;
+}
+hr.rounded {
+  border-top: 8px solid #bbb;
+  border-radius: 5px;
+}
+
+
+
+
+.footer {
+  position: absolute;
+   font-family: 'Raleway', sans-serif;
+border:3px solid black;
+ bootom: -1;
+  right: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.ft{
+
+text-align:center;
+color: black;
+font-family: 'Raleway', sans-serif;
+
+}
+
+a {
+  padding: 0px;
+  text-decoration: none;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+
+.overlays {
+  /* Height & width depends on how you want to reveal the overlay (see JS below) */
+  height: 100%;
+  width:0;
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  background-color: rgb(0,0,0); /* Black fallback color */
+  background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+
+/* Position the content inside the overlay */
+.overlays-content {
+  position: relative;
+  top:0; /* 25% from the top */
+  width: 100%; /* 100% width */
+  text-align: ; /* Centered text/links */
+  margin-top: 0; /* 30px top margin to avoid conflict with the close button on smaller screens */
+}
+
+/* The navigation links inside the overlay */
+.overlays a {
+
+  text-decoration: none;
+  color: #818181;
+  display: block; /* Display block instead of inline */
+  transition: 0.3s; /* Transition effects on hover (color) */
+}
+
+/* When you mouse over the navigation links, change their color */
+.overlays a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+
+/* Position the close button (top right corner) */
+.overlays .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+@media screen and (max-height: 450px) {
+
+  .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
+}
+.tabhead{
+  height:150px
+  display: block;
+  background-color: inherit;
+  font-family: 'Raleway', sans-serif;
+  color: black;
+  width: 100%;
+
+  outline: none;
+  text-align: left;
+  cursor: pointer;
+
+}
+
+.tab {
+  float: left;
+  border: 1px solid #ccc;
+ overflow-x: visible;
+  background-color: #f1f1f1;
+  width: 20%;
+  height: 100%;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+  display: block;
+  background-color: inherit;
+  font-family: 'Raleway', sans-serif;
+  color: black;
+  padding: 22px 16px;
+  width: 100%;
+  border: none;
+  outline: none;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.01s;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current "tab button" class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  float: left;
+  padding: 0px 12px;
+  border: 1px solid #ccc;
+  text-align:center;
+  display:none;
+  width: 80%;
+  color:black;
+  border-left: none;
+  transition: 0.1s;
+  background-color:white;
+  height: 100%;
+}
+
+.input_address{
+
+border:1px solid;
+
+height:50px;
+margin: 0px 0px;
+ padding: 8px 15px;
+ font-family: 'Lobster', cursive;
+
+background-color: #e6e6e6;
+
+}
+
+h2{
+text-align:center;
+}
+.profile-pic {
+  width: 100px;
+  height: 100px;
+  margin: 10px auto;
+   object-fit: cover;
+  margin-top: 30px;
+  margin-left: 87px;
+  transition: 0.1s;
+  border-radius: 50%;
+  border: 1px solid black;
+  @include trans($time: .3s);
+  &:hover {
+    cursor: pointer;
+    transform: translateY(-10px) scale(1.3);
+  }
+}
+
+@media all and (max-width: 300px) {
+  . profile-pic{
+    /* On small screens, we are no longer using row direction but column */
+    width: 50px;
+  height: 50px;
+  margin: 5px auto
+  }
+}
+
+
+
+.men-pic {
+  width: 40px;
+  height: 40px;
+  margin: 10px auto;
+  margin-top: 30px;
+  margin-left: 87px;
+  border-radius: 50%;
+  border: 0px;
+ object-fit: cover;
+}
+
+.ht{
+
+text-align:center;
+color: white;
+font-family: 'Raleway', sans-serif;
+border-radius:8px;
+font-size:30px;
+letter-spacing:2px;
+transition: 0.1s;
+font-weight:bold;
+background-color:black;
+
+}
+
+.menue{
+  width: 25px;
+  height: 2.5px;
+  background-color: white;
+  margin: 6px 0;
+}
+.menue_container{
+color:white;
+position: absolute;
+ top: 1%;
+  left: 8%;
+}
